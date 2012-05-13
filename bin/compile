@@ -102,6 +102,7 @@ cd sqlite-3.7.2/
 ./configure --prefix=/app/.local
 make
 make install
+export PATH=:/app/.local/bin:/app/.local/include:/app/.local/lib:$PATH
 
 # Python brew
 curl -kL http://xrl.us/pythonbrewinstall | bash
