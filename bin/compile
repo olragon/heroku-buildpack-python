@@ -144,8 +144,6 @@ mkdir -p .heroku
 LEGACY_VIRTUALENV=false
 VIRTUALENV_LOC=$MODERN_VIRTUALENV_LOC
 
-ln -s /usr/lib/python2.6/lib-dynload/_sqlite3.so $VIRTUALENV_LOC/lib/python2.7/lib-dynload
-
 # Support "old-style" virtualenvs.
 if [ -d $CACHE_DIR/$LEGACY_VIRTUALENV_TRIGGER ]; then
   LEGACY_VIRTUALENV=true
@@ -169,6 +167,8 @@ for dir in $CACHED_DIRS; do
   cp -R $CACHE_DIR/$dir . &> /dev/null || true
 done
 
+mkdir -p $VIRTUALENV_LOC/lib/python2.7/lib-dynload
+ln -s /usr/lib/python2.6/lib-dynload/_sqlite3.so $VIRTUALENV_LOC/lib/python2.7/lib-dynload
 
 # ### Virtualenv Setup
 #
