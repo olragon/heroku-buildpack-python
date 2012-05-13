@@ -92,11 +92,14 @@ function puts-warn (){
 # Switch to the repo's context.
 cd $BUILD_DIR
 
+# Prepare
+mkdir -p /app/.local
+
 # SQLite3
 curl -O http://www.sqlite.org/sqlite-amalgamation-3.7.2.tar.gz
 tar xzf sqlite-amalgamation-3.7.2.tar.gz
 cd sqlite-3.7.2/
-./configure
+./configure --prefix=/app/.local
 make
 make install
 
