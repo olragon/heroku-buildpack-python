@@ -57,7 +57,7 @@ LEGACY_VIRTUALENV_TRIGGER="lib/python2.7"
 
 # Python version. This will be used in the future to specify custom Pythons.
 PYTHON_VERSION="2.7.2"
-PYTHON_EXE="/app/.local/bin/python2.7"
+PYTHON_EXE="python2.7"
 
 # Sanitizing environment variables.
 unset GIT_DIR
@@ -86,12 +86,6 @@ function puts-warn (){
   echo " !     $@"
 }
 
-# ## Build Time
-#
-
-# Switch to the repo's context.
-cd $BUILD_DIR
-
 #export PYTHONPATH=:/usr/lib/python2.6/lib-dynload:$PYTHONPATH
 
 # Prepare
@@ -115,6 +109,7 @@ sed "s|'/usr/local/include/sqlite3'|'/usr/local/include/sqlite3','/app/.local/sh
 ./configure --prefix=/app/.local
 make
 make install
+PYTHON_EXE="/app/.local/bin/python2.7"
 #export PYTHONPATH=:/app/.local/lib/python2.7:$PYTHONPATH
 
 # Python brew
@@ -123,6 +118,12 @@ make install
 #export PATH=:/app/.pythonbrew/bin/:$PATH
 #pythonbrew install --verbose 2.7.2
 #pythonbrew switch 2.7.2
+
+# ## Build Time
+#
+
+# Switch to the repo's context.
+cd $BUILD_DIR
 
 # ### Sanity Checks
 #
