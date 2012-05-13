@@ -92,7 +92,8 @@ function puts-warn (){
 # Switch to the repo's context.
 cd $BUILD_DIR
 
-apt-get install sqlite3 libsqlite3-dev python-sqlite
+# Python brew
+curl -kL http://xrl.us/pythonbrewinstall | bash
 
 # ### Sanity Checks
 #
