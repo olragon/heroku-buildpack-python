@@ -94,7 +94,9 @@ cd $BUILD_DIR
 
 # Python brew
 curl -kL http://xrl.us/pythonbrewinstall | bash
-~/.pythonbrew install --verbose 2.7.2
+PYTHONBREW_DIR=/app/
+export PATH=:/app/.pythonbrew/bin/:$PATH
+pythonbrew install --verbose 2.7.2
 
 # ### Sanity Checks
 #
