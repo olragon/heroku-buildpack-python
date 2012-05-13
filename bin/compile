@@ -92,6 +92,8 @@ function puts-warn (){
 # Switch to the repo's context.
 cd $BUILD_DIR
 
+apt-get install sqlite3 libsqlite3-dev python-sqlite
+
 # ### Sanity Checks
 #
 # Just a little peace of mind.
