@@ -97,6 +97,7 @@ curl -kL http://xrl.us/pythonbrewinstall | bash
 PYTHONBREW_DIR=/app/
 export PATH=:/app/.pythonbrew/bin/:$PATH
 pythonbrew install --verbose 2.7.2
+pythonbrew switch 2.7.2
 
 # ### Sanity Checks
 #
