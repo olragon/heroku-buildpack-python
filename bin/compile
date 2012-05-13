@@ -92,7 +92,7 @@ function puts-warn (){
 # Switch to the repo's context.
 cd $BUILD_DIR
 
-ln -s /usr/lib/python2.6/lib-dynload/_sqlite3.so ~/.heroku/venv/lib/python2.7/lib-dynload/
+ln -s /usr/lib/python2.6/lib-dynload/_sqlite3.so /app/.heroku/venv/lib/python2.7/lib-dynload/
 
 export PYTHONPATH=:/usr/lib/python2.6/lib-dynload:$PYTHONPATH
 
