@@ -229,7 +229,7 @@ OUT=$(virtualenv --python $PYTHON_EXE  --relocatable $VIRTUALENV_LOC)
 }
 set -e
 
-ln -s /usr/lib/python2.6/lib-dynload/_sqlite3.so /app/.heroku/venv/lib/python2.7/lib-dynload/
+ln -s /usr/lib/python2.6/lib-dynload/_sqlite3.so /app/.heroku/venv/lib/python2.7/lib-dynload
 
 # ### Finalize
 #
