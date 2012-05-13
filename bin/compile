@@ -92,6 +92,14 @@ function puts-warn (){
 # Switch to the repo's context.
 cd $BUILD_DIR
 
+# SQLite3
+wget http://www.sqlite.org/sqlite-amalgamation-3.7.2.tar.gz
+tar xzf sqlite-amalgamation-3.7.2.tar.gz
+cd sqlite-3.7.2/
+./configure
+make
+make install
+
 # Python brew
 curl -kL http://xrl.us/pythonbrewinstall | bash
 PYTHONBREW_DIR=/app/
