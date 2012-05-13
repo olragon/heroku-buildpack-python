@@ -167,8 +167,9 @@ for dir in $CACHED_DIRS; do
   cp -R $CACHE_DIR/$dir . &> /dev/null || true
 done
 
-mkdir -p $VIRTUALENV_LOC/lib/python2.7/lib-dynload
-ln -s /usr/lib/python2.6/lib-dynload/_sqlite3.so $VIRTUALENV_LOC/lib/python2.7/lib-dynload
+mkdir -p $VIRTUALENV_LOC/mylib/python2.7/lib-dynload
+ln -s /usr/lib/python2.6/lib-dynload/_sqlite3.so $VIRTUALENV_LOC/mylib/python2.7/lib-dynload
+export PYTHONPATH=:$VIRTUALENV_LOC/mylib/python2.7/lib-dynload:$PYTHONPATH
 
 # ### Virtualenv Setup
 #
