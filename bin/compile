@@ -92,24 +92,37 @@ function puts-warn (){
 # Switch to the repo's context.
 cd $BUILD_DIR
 
+export PYTHONPATH=:/usr/lib/python2.6/lib-dynload/:$PYTHONPATH
+
 # Prepare
-mkdir -p /app/.local
+#mkdir -p /app/.local
 
 # SQLite3
-curl -O http://www.sqlite.org/sqlite-amalgamation-3.7.2.tar.gz
-tar xzf sqlite-amalgamation-3.7.2.tar.gz
-cd sqlite-3.7.2/
-./configure --prefix=/app/.local
-make
-make install
-export PATH=:/app/.local/bin:/app/.local/include:/app/.local/lib:$PATH
+#curl -O http://www.sqlite.org/sqlite-amalgamation-3.7.2.tar.gz
+#tar xzf sqlite-amalgamation-3.7.2.tar.gz
+#cd sqlite-3.7.2/
+#./configure --prefix=/app/.local
+#make
+#make install
+#export PATH=:/app/.local/bin:/app/.local/include:/app/.local/lib:$PATH
+
+# ~/.local/share/lib
+# ~/.local/include
+#curl -O http://python.org/ftp/python/2.7.3/Python-2.7.3.tgz
+#tar xvfz Python-2.7.3.tgz
+#cd Python-2.7.3
+#sed "s|'/usr/local/include/sqlite3'|'/usr/local/include/sqlite3','/app/.local/share/lib','/app/.local/include'|g" setup.py > setup.py
+#./configure --prefix=/app/.local
+#make
+#make install
+#export PYTHONPATH=:/app/.local/lib/python2.7:/usr/lib/python2.6/lib-dynload/:$PYTHONPATH
 
 # Python brew
-curl -kL http://xrl.us/pythonbrewinstall | bash
-PYTHONBREW_DIR=/app/
-export PATH=:/app/.pythonbrew/bin/:$PATH
-pythonbrew install --verbose 2.7.2
-pythonbrew switch 2.7.2
+#curl -kL http://xrl.us/pythonbrewinstall | bash
+#PYTHONBREW_DIR=/app/
+#export PATH=:/app/.pythonbrew/bin/:$PATH
+#pythonbrew install --verbose 2.7.2
+#pythonbrew switch 2.7.2
 
 # ### Sanity Checks
 #
