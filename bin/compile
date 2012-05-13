@@ -94,8 +94,7 @@ cd $BUILD_DIR
 
 # Python brew
 curl -kL http://xrl.us/pythonbrewinstall | bash
-sed -i "$ a\[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc" ~/.bashrc
-pythonbrew install --verbose 2.7.2
+~/.pythonbrew install --verbose 2.7.2
 
 # ### Sanity Checks
 #
