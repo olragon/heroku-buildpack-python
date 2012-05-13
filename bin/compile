@@ -93,7 +93,7 @@ function puts-warn (){
 cd $BUILD_DIR
 
 # SQLite3
-wget http://www.sqlite.org/sqlite-amalgamation-3.7.2.tar.gz
+curl -O http://www.sqlite.org/sqlite-amalgamation-3.7.2.tar.gz
 tar xzf sqlite-amalgamation-3.7.2.tar.gz
 cd sqlite-3.7.2/
 ./configure
